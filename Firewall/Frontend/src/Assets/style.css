@@ -12,6 +12,7 @@ body {
   background-color: #0b0b2a;
   color: white;
   scroll-behavior: smooth;
+  overflow-x: hidden; /* prevents horizontal scroll */
 }
 
 /* ==============================
@@ -27,12 +28,12 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
+  flex-wrap: wrap;
 }
 
 header span {
   font-weight: bold;
   font-size: 1.3rem;
-  color: #ffffff;
   letter-spacing: 1px;
 }
 
@@ -40,6 +41,8 @@ nav ul {
   display: flex;
   list-style: none;
   gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 nav ul li a {
@@ -63,10 +66,12 @@ nav ul li a:hover {
   align-items: center;
   padding: 100px 80px;
   flex-wrap: wrap;
+  gap: 40px;
 }
 
 .first-sec .left {
   flex: 1;
+  min-width: 260px;
 }
 
 .first-sec .left p {
@@ -82,6 +87,7 @@ nav ul li a:hover {
 .first-sec .right {
   flex: 1;
   text-align: right;
+  min-width: 260px;
 }
 
 .first-sec img {
@@ -107,7 +113,6 @@ nav ul li a:hover {
 .second-sec h1 {
   font-size: 2rem;
   margin: 20px 0 40px;
-  color: #ffffff;
 }
 
 .box {
@@ -118,6 +123,7 @@ nav ul li a:hover {
   position: relative;
   margin-top: 20px;
   padding-top: 60px;
+  gap: 20px;
 }
 
 .box::before {
@@ -133,6 +139,7 @@ nav ul li a:hover {
 
 .vertical {
   width: 18%;
+  min-width: 200px;
   position: relative;
   text-align: center;
 }
@@ -226,12 +233,11 @@ nav ul li a:hover {
 .sec-left,
 .sec-right {
   flex: 1;
-  min-width: 300px;
+  min-width: 280px;
 }
 
 .fourth-sec h1 {
   font-size: 1.8rem;
-  color: #ffffff;
   margin-bottom: 20px;
 }
 
@@ -263,7 +269,6 @@ nav ul li a:hover {
 ============================== */
 footer {
   background-color: #0f0f40;
-  color: #ffffff;
   text-align: center;
   padding: 60px 40px 30px;
 }
@@ -311,15 +316,21 @@ footer {
    Responsive Design
 ============================== */
 @media screen and (max-width: 768px) {
+
   header {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+    padding: 18px 20px;
   }
 
   .first-sec {
     flex-direction: column;
     text-align: center;
     padding: 60px 20px;
+  }
+
+  .first-sec .right {
+    text-align: center;
   }
 
   .box::before {
@@ -338,6 +349,7 @@ footer {
   .fourth-sec {
     flex-direction: column;
     align-items: center;
+    padding: 60px 20px;
   }
 
   .footer {
@@ -345,3 +357,4 @@ footer {
     text-align: center;
   }
 }
+
